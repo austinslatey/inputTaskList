@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/austinslatey/inputTaskList#readme",
   "dependencies": {
-    "json2csv": "^6.0.0-alpha.2",
-    "prompt": "^1.3.0"
+    "inquirer": "^12.9.6",
+    "json2csv": "^6.0.0-alpha.2"
   }
 }
