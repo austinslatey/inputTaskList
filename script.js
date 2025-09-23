@@ -11,10 +11,23 @@ const schema = {
       required: true
     },
     status: {
-      description: 'Status? (In progress, Not Started, Errors)',
+      description: 'Status? (Select a number)',
       type: 'string',
       enum: ['In progress', 'Not Started', 'Errors'],
-      required: true
+      required: true,
+      message: 'Please select a valid status option (1-3)',
+      conform: function(value) {
+        const options = ['In progress', 'Not Started', 'Errors'];
+        return options.includes(value);
+      },
+      before: function(value) {
+        const options = ['In progress', 'Not Started', 'Errors'];
+        return options[parseInt(value) - 1] || value;
+      },
+      ask: function() {
+        console.log('1. In progress\n2. Not Started\n3. Errors');
+        return true;
+      }
     },
     toComplete: {
       description: 'What needs to be done to complete?',
@@ -22,10 +35,23 @@ const schema = {
       required: true
     },
     priority: {
-      description: 'Priority? (High, Medium, Low)',
+      description: 'Priority? (Select a number)',
       type: 'string',
       enum: ['High', 'Medium', 'Low'],
-      required: true
+      required: true,
+      message: 'Please select a valid priority option (1-3)',
+      conform: function(value) {
+        const options = ['High', 'Medium', 'Low'];
+        return options.includes(value);
+      },
+      before: function(value) {
+        const options = ['High', 'Medium', 'Low'];
+        return options[parseInt(value) - 1] || value;
+      },
+      ask: function() {
+        console.log('1. High\n2. Medium\n3. Low');
+        return true;
+      }
     },
     addAnother: {
       description: 'Add another task? (yes/no)',
