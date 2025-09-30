@@ -5,6 +5,12 @@ const fs = require('fs');
 // Define the questions for inquirer
 const questions = [
   {
+    type: 'list',
+    name: 'location',
+    message: 'Location?',
+    choices: ['NetSuite', 'Shopify', 'Wordpress', 'NetSuite + Shopify', 'All',  'Other']
+  },
+  {
     type: 'input',
     name: 'task',
     message: 'What are you working on?',
@@ -45,6 +51,7 @@ async function getTask() {
 
   // Store the task
   tasks.push({
+    'Location': answers.Location,
     'What I\'m working on': answers.task,
     'Status': answers.status,
     'What needs to be done to complete': answers.toComplete,
