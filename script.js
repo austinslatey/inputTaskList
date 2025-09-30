@@ -8,7 +8,7 @@ const questions = [
     type: 'list',
     name: 'location',
     message: 'Location?',
-    choices: ['NetSuite', 'Shopify', 'Wordpress', 'NetSuite + Shopify', 'All',  'Other']
+    choices: ['NetSuite', 'Shopify', 'Wordpress', 'NetSuite + Shopify', 'HubSpot', 'All',  'Other']
   },
   {
     type: 'input',
