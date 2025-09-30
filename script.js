@@ -63,7 +63,7 @@ async function getTask() {
     await getTask();
   } else {
     // Convert to CSV and save
-    const fields = ['What I\'m working on', 'Status', 'What needs to be done to complete', 'Priority'];
+    const fields = ['location', 'What I\'m working on', 'Status', 'What needs to be done to complete', 'Priority'];
     const json2csvParser = new Parser({ fields });
     const csv = json2csvParser.parse(tasks);
 
